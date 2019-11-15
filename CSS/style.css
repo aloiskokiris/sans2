@@ -51,3 +51,205 @@ vertical-align: text-bottom; }
 	color: black;
 
 }
+
+
+.aloisTete {
+	
+	position: relative;
+	top: 100%;
+	font-size: 200px;
+
+}
+
+#aloisOeilGauche {
+
+	position:absolute;
+
+	border-radius: 45%;
+	background-color: #42454a;
+	width: 28px; height: 45px;
+
+	left: 70px;
+
+}
+
+#aloisOeilDroite {
+
+	position:absolute;
+
+	border-radius: 45%;
+	background-color: #42454a;
+	width: 28px; height: 44px;
+
+	left: 130px;
+
+}
+
+
+#aloisBouche {
+
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	border-radius-bottom-right: 25px;
+	border-radius-bottom-left: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+
+	width: 100px; height: 50px;
+	background-color: #dc697f;
+	position:absolute;
+	left: 28%;;
+	top: 80px;
+
+}
+
+#aloisVisage {
+
+	border-radius: 50%;
+	left: -15px;
+	background-color: #f29ea4;
+	width: 230px; height: 230px;
+
+}
+
+.aloisBulle {
+
+	position: relative;
+	left: 16px;
+	top: 30%;
+	width: 150px; 
+	background-color: white;
+
+	border-radius: 10px;
+	padding: 8px;
+
+	font-size: 25px;
+
+	-webkit-animation-name: aloisBulleIdle;
+	-webkit-animation-duration: 1.25s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate-reverse;
+
+}
+
+.aloisTriangle {
+
+	position: absolute;
+	left: 75px;
+	top: 68%;
+  	height: 50px; 
+  	border-left: 20px solid transparent;
+  	border-right: 20px solid transparent;
+  
+  	border-top: 20px solid white;
+
+	-webkit-animation-name: aloisTriangleIdle;
+	-webkit-animation-duration: 1.25s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate-reverse;
+
+}
+
+.aloisBouton {
+
+	position: relative;
+	background-color: #ffe963;
+	display: block;
+	width: 200px;
+	height: 200px;
+
+	text-align: center;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-family: 'Fredoka One', cursive;
+	color: #5d4c46;
+
+	border: 0px solid #FF0000;
+	cursor: pointer;
+
+	border-radius: 10px;
+
+	-webkit-animation-name: aloisBoutonNormal;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate-reverse;
+
+	overflow: hidden;
+	white-space: nowrap; /* A quoi ça sert ? */
+
+}
+
+@keyframes aloisBulleIdle {
+	0% {top: 22%;} 100% {top: 30%;}
+}
+
+@keyframes aloisTriangleIdle {
+	0% {top: 60%;} 100% {top: 68%;}
+}
+
+@keyframes aloisBulleHover {
+
+	0% {font-size: 25px;}
+  	70%	{top: 5%;}
+  	100% {top:5%; font-size: 40px; }
+}
+
+.aloisBouton:hover .aloisTriangle {
+
+	display: none;
+
+}
+
+.aloisBouton:hover .aloisBulle {
+
+	-webkit-animation:initial;
+
+	-webkit-animation-name: aloisBulleHover;
+	-webkit-animation-duration: 1.10s;
+	-webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes aloisVisageHover {
+ 
+  70%	{top: 7%;}
+  100% 	{top: 10%;}
+}
+
+@keyframes aloisVisageHover2 {
+	0% { top:60%; left: 50px; width: 150px; }
+	/*
+	2% { top: 100%; height: 100px;}
+	*/
+	50% { }
+}
+
+.aloisBouton:hover {
+
+	background-color: #ffe963;
+	-webkit-animation:initial;
+
+}
+
+.aloisBouton:hover .aloisTete {
+
+	-webkit-animation-name: aloisVisageHover;
+	-webkit-animation-duration: 1.10s;
+	-webkit-animation-fill-mode: forwards;
+
+}
+
+.aloisBouton:hover #aloisBouche { /* La bouche apparait un peu aprés */
+
+	-webkit-animation-name: aloisVisageHover2;
+	-webkit-animation-duration: 1.10s;
+	-webkit-animation-fill-mode: forwards;
+
+
+}
+
+.aloisBouton .aloistexte2 { display: none; }
+.aloisBouton:hover .aloistexte1 { display: none; }
+.aloisBouton:hover .aloistexte2 { display: inline; }
+
+}
